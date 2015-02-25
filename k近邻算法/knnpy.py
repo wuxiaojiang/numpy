@@ -17,7 +17,16 @@ class knn():
         diffmat = st-dataset
         #print diffmat
         sqdiffmat = diffmat**2
-        sqdis = sqdiffmat**0.5
-        #print sqdis
+        sqdis = sqdiffmat.sum(axis=1)
+        dis = sqdis**0.5
+        print sqdis
+        print dis
+        classcount = {}
         sort = sqdis.argsort()
+        print sort
+        for i in range(k):
+            vote = labels[sort[i]]
+            print vote
+            classcount[vote] = classcount.get(vote,0)+1
+            print classcount
         

@@ -1,4 +1,5 @@
 import knnpy
 c = knnpy.knn()
 data,lab = c.createdata()
-c.do([1.2,1.3],data,lab,3)
+b = c.do([0.7,0.6],data,lab,3)
+print b

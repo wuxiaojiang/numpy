@@ -26,7 +26,8 @@ class knn():
         print sort
         for i in range(k):
             vote = labels[sort[i]]
-            print vote
             classcount[vote] = classcount.get(vote,0)+1
-            print classcount
+        sortclass = sorted(classcount.iteritems(),key=operator.itemgetter(1),reverse=True)
+        return sortclass[0][0]
+            
         
